@@ -1,0 +1,560 @@
+:root {
+    --main-color: #369;
+    --second-color: #38b;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Raleway", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        width: 1177px;
+    }
+}
+
+header {
+    right: 0;
+    top: 0;
+    position: sticky;
+    z-index: 2;
+
+}
+
+header.scrolled {
+    background-color: white;
+    /* Change this to whatever color you want */
+    /* Change the text color if needed */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+header .logo {
+    text-transform: capitalize;
+    width: 167px;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+header.scrolled .logo {
+    color: var(--main-color)
+}
+
+header .logo:hover {
+    color: var(--second-color);
+}
+
+header .nav {
+    flex: 1;
+    position: relative;
+}
+
+header .nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header .nav ul li {}
+
+header .nav ul li a {
+    padding: 15px 27px;
+    color: white;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+header.scrolled .nav ul li a {
+    color: var(--main-color);
+    /* Change this to the link color you want when scrolling */
+}
+
+header.scrolled .nav ul li a.active {
+    background-color: var(--main-color);
+    color: white;
+    /* Change this to the link color you want when scrolling */
+}
+
+header.scrolled .nav ul li a:hover {
+    color: white;
+}
+
+@media (min-width:970px) {
+    header .nav ul li a:hover {
+        background-color: var(--main-color);
+    }
+}
+
+
+.bar {
+    color: white;
+    display: none;
+    transition: .5s ease 1s;
+}
+
+.scrolled .bar {
+    color: #000;
+
+}
+
+
+
+@media (max-width:970px) {
+    .bar {
+        display: block;
+        font-size: 26px;
+        width: fit-content;
+        padding-right: 50px;
+        position: absolute;
+        z-index: 33;
+        bottom: -15px;
+        right: 0;
+    }
+
+
+    header .nav ul {
+        display: none;
+    }
+
+    header .nav ul li {
+        padding: 10px 0;
+
+    }
+
+    header .nav ul li a {
+        color: #000;
+    }
+
+    header .nav ul li:hover {
+        width: 100%;
+        background-color: #369;
+    }
+
+
+
+    .bar:hover+ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: calc(100% + 167px);
+        top: 26px;
+        right: 0;
+        background-color: #ddd;
+    }
+}
+
+/*landing*/
+.landing {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../image/infinite-loop-01.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.landing .text {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.landing .text h2 {
+    margin-bottom: 30px;
+    font-weight: normal;
+    font-size: 40px;
+}
+
+.landing .text p {}
+
+.landing .text button {
+    width: 100px;
+    height: 60px;
+    background: var(--main-color);
+    border: none;
+    position: absolute;
+    bottom: 5%;
+    color: white;
+    transition: .3;
+}
+
+.landing .text button:hover {
+    background-color: var(--second-color);
+    transform: scale(1.1);
+}
+
+/*what we do*/
+.what-do {
+    margin-top: 100vh;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.what-do .container {}
+
+.what-do .container .text {}
+
+.what-do .container .text h2 {
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: normal;
+    color: var(--main-color);
+}
+
+.what-do .container .text p {
+    line-height: 2;
+}
+
+.what-do .container .boxs {
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+}
+
+@media (max-width:768px) {
+    .what-do .container .boxs {
+        flex-direction: column;
+    }
+
+    .what-do .container .boxs .box {
+        display: flex;
+        width: 100% !important;
+    }
+}
+
+.what-do .container .boxs .box {
+    width: 45%;
+    display: flex;
+}
+
+.what-do .container .boxs .box i {
+    padding-right: 25px;
+    color: var(--main-color);
+}
+
+.what-do .container .boxs .box .text {}
+
+.what-do .container .boxs .box .text h3 {
+    padding-top: 8px;
+    padding-bottom: 20px;
+    color: var(--main-color);
+    font-size: 22px;
+    font-weight: inherit;
+
+}
+
+.what-do .container .boxs .box .text p {}
+
+.what-do button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: var(--main-color);
+    margin-top: 30px;
+}
+
+.what-do button:hover {
+    background-color: var(--second-color);
+}
+
+/*Testimonials*/
+.Testimonials {
+    padding-top: 25px;
+    padding-bottom: 70px;
+    margin-top: 30px;
+    position: relative;
+    color: white;
+
+}
+
+.Testimonials::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/infinite-loop-02.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+}
+
+.Testimonials .head-title {
+    text-align: center;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.Testimonials .head-title h2 {
+    padding: 20px 0;
+    font-size: 35px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.Testimonials .head-title p {
+    line-height: 1.5;
+}
+
+.Testimonials .boxs {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin: 50px auto;
+}
+
+.Testimonials .boxs .box {
+    width: 30%;
+    text-align: center;
+}
+@media (max-width:678px) {
+    .Testimonials .boxs{
+        flex-direction: column;
+    }
+    .Testimonials .boxs .box{
+        width: 100%;
+        margin: 10px auto;
+    }
+    
+}
+
+.Testimonials .boxs img {
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+
+.Testimonials .boxs p {
+    text-align: start;
+    font-size: 14px;
+}
+
+.Testimonials .boxs .box span {
+    display: block;
+    text-align: end;
+    padding-top: 14px;
+}
+
+.Testimonials .points {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: rotate(90deg);
+}
+
+.Testimonials .points ul li {
+    width: 15px;
+    height: 15px;
+    background-color: #959090;
+    border-radius: 50%;
+
+}
+
+.Testimonials .points li.active {
+    background-color: white;
+    margin: 25px 0;
+}
+
+/*garrly*/
+.garrly {
+    padding-top: 25px;
+    padding-bottom: 70px;
+    margin-top: 30px;
+    position: relative;
+    /* color: white; */
+}
+
+.garrly .head-title {
+    text-align: center;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.garrly .images {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 80px;
+}
+
+.garrly .images div {
+    margin: 0 auto;
+    transition: 4s ease;
+    position: relative;
+}
+
+.garrly .images div::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 4px);
+    background: #00000059;
+    box-sizing: border-box;
+    display: none;
+    border-bottom: 20px solid #0b7684;
+}
+
+.garrly .images div p {
+    position: absolute;
+    bottom: 32px;
+    right: 5px;
+    color: white;
+    font-size: 18px;
+    display: none;
+
+}
+
+.garrly .images div:hover::before {
+    display: block;
+}
+
+.garrly .images div:hover>p {
+    display: block;
+}
+.garrly .points {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -32px;
+    transform: rotate(90deg);
+}
+
+.garrly .points ul li {
+    width: 15px;
+    height: 15px;
+    background-color: #ddd;
+    border-radius: 50%;
+
+}
+
+.garrly .points li.active {
+    background-color: var(--main-color);
+    margin: 25px 0;
+}
+@media (max-width:800px) {
+    .points{
+        display: none;
+    }
+    
+}
+
+/*Contact-us*/
+.Contact-us{
+    background-image: url(../image/infinite-loop-03.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.Contact-us .container{
+
+}
+.Contact-us .container .head-title{
+    text-align: center;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto
+}
+.Contact-us .cols{
+    margin-top: 60px;
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+.Contact-us .cols .col-1{
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+}
+.Contact-us .cols .col-1 input{
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.Contact-us .cols .col-1 textarea{
+    height: 150px;
+}
+.Contact-us .cols .col-1 button{
+    width: 156px;
+    height: 33px;
+    background: var(--main-color);
+    margin: 20px 0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+.Contact-us .cols .col-2{
+    width: 45%;
+}
+.Contact-us .cols .col-2 div{
+    margin-bottom: 45px;
+}
+.Contact-us .cols .col-2 div a {
+    color: white;
+    align-items: center;
+display: flex;
+}
+.Contact-us .cols .col-2 div a i{
+    margin-right: 21px;
+}
